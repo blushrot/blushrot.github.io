@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="tv-screen">
-    <div class="brain"></div>
-    <div class="glitch-overlay"></div>
-  </div>
+import { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
-  <script>
-    setTimeout(() => {
-      window.location.href = "home.html"; // You’ll create this next
-    }, 5000);
-  </script>
-</body>
-</html>
+export default function CreepyWebsite() {
+  const [tab, setTab] = useState("gallery");
+
+  // Background audio
+  useEffect(() => {
+    const audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+    audio.loop = true;
+    audio.volume = 0.1;
+    audio.play();
+
+    return () => audio.pause();
+  }, []);
+
+  // Play hover sound
+  const playHoverSound = () => {
+    const hoverSound = new Audio("https://www.soundjay.com/button/beep-07.wav");
+    hoverSound.play();
+  };
+
+  return (
+    <main className="min-h-screen bg-[#100f0f] text-[#e6e3dd] font-serif p-6 tracking-tight bg-[url('https://www.transparenttextures.com/patterns/black-paper.png')]">
+      <header className="text-center mb-16">
+        <h1 className="text-6xl font-black text-[#fcf9f4] drop-shadow-2xl tracking-widest uppercase">Preacher's Channel</h1>
+        <p className="text-sm italic text-[#9f9386] mt-2">Unsett
