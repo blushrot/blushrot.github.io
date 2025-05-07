@@ -1,28 +1,35 @@
-import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Preacher's Channel: Unsettling visions from the haunted South" />
+    <title>Preacher's Channel</title>
+    <!-- Add Favicon -->
+    <link rel="icon" href="your-favicon-url.ico" />
+    
+    <!-- Google Fonts (for the creepy vibe) -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <!-- External CSS (if needed) -->
+    <link rel="stylesheet" href="styles.css" />
+    
+    <!-- Adding a background image for the creepy vibe -->
+    <style>
+      body {
+        background: url('https://www.transparenttextures.com/patterns/black-paper.png'), #100f0f;
+        background-size: cover;
+        color: #e6e3dd;
+        font-family: 'Crimson Pro', serif;
+      }
+    </style>
+  </head>
 
-export default function CreepyWebsite() {
-  const [tab, setTab] = useState("gallery");
+  <body>
+    <div id="root"></div>
 
-  // Background audio
-  useEffect(() => {
-    const audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
-    audio.loop = true;
-    audio.volume = 0.1;
-    audio.play();
+    <!-- Load your bundled React app here -->
+    <script src="/path-to-your-react-bundle.js"></script>
+  </body>
+</html>
 
-    return () => audio.pause();
-  }, []);
-
-  // Play hover sound
-  const playHoverSound = () => {
-    const hoverSound = new Audio("https://www.soundjay.com/button/beep-07.wav");
-    hoverSound.play();
-  };
-
-  return (
-    <main className="min-h-screen bg-[#100f0f] text-[#e6e3dd] font-serif p-6 tracking-tight bg-[url('https://www.transparenttextures.com/patterns/black-paper.png')]">
-      <header className="text-center mb-16">
-        <h1 className="text-6xl font-black text-[#fcf9f4] drop-shadow-2xl tracking-widest uppercase">Preacher's Channel</h1>
-        <p className="text-sm italic text-[#9f9386] mt-2">Unsett
